@@ -6,7 +6,7 @@ pipeline {
         stage('Source') {
             steps {
                 echo 'Clonando el repositorio...'
-                git 'https://github.com/srayuso/unir-cicd.git'
+                git 'https://github.com/JoseGo/unir-test-act2.git'
             }
         }
         stage('Build') {
