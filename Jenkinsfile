@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -5,7 +6,7 @@ pipeline {
         stage('Source') {
             steps {
                 echo 'Clonando el repositorio...'
-                git 'https://github.com/JoseGo/unir-test-act2.git'
+                sh 'git clone https://github.com/JoseGo/unir-test-act2.git'
             }
         }
         stage('Build') {
@@ -43,7 +44,8 @@ pipeline {
             junit allowEmptyResults: true, testResults: 'results/*_result.xml'
         }
         failure {
-            echo 'Se envía notificación por correo'
+            echo 'El build falló. se envía correo de notificación.'
         }
     }
 }
+
